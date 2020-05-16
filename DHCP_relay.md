@@ -54,7 +54,8 @@ subnet 192.168.60.0 netmask 255.255.255.0 {
       }
   }
 ```
-### DHCP relay VLAN  
 
-
-![](https://github.com/dbudakov/23.DNS/blob/master/images/DHCP/DHCP_relay_3.png)
+DHCP relay VLAN  
+---
+Работает аналогично сегментам, на схеме свич 3 уровня, который маршрутизирует DHCP пакеты между сегментами  
+![](https://github.com/dbudakov/23.DNS/blob/master/images/DHCP/DHCP_relay_3.png)  
