@@ -3,7 +3,7 @@
   become: yes
   tasks:
     - name: install packages
-      yum: name={{ item }} state=latest
+      yum: name={{ item }} state=present
       with_items:
         - bind
         - bind-utils
