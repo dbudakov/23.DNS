@@ -29,7 +29,7 @@ www - смотрит на обоих клиентов
 dig @192.168.50.10 web1.dns.lab
 dig @192.168.50.10 www.newdns.lab
 ```
-И резолв dig `web1.dns.lab` и `web2.dns.lab` от `client2`  
+И резолв `web1.dns.lab` и `web2.dns.lab` от `client2`  
 ```
 dig @192.168.50.10 web1.dns.lab
 dig @192.168.50.10 web2.dns.lab
