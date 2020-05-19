@@ -23,23 +23,21 @@ www - смотрит на обоих клиентов
 6 - выполнено задания со звездочкой  
   
 ## Решение    
-  
-В файл `/etc/named.conf` добавлены директивы `view`, для разделения рeзолвинга имён для `client1` и `client2`, добалена зона `newdns.lab.` и настроен SplitDNS для client'ов через DNS-имя `www.newdns.lab.`   
-Чтобы проверить стенд необходимо зайти на `client1` и выполнить следующие команды, чтобы убедиться что в зоне dns.lab. для него доступет `web1.dns.lab.`, но не доступен `web2`.     
-А также резолвится имя www.newdns.lab..  
-```  
-dig @192.168.50.10 www.newdns.lab.  
-dig @192.168.50.10 web1.dns.lab.  
-dig @192.168.50.10 web2.dns.lab. # информация должна быть недоступна   
-```  
-  
-На втором клиенте полностью доступен сегмент `dns.lab.` но доступа к зоне `newdns.lab.` нет  
-```  
-dig @192.168.50.10 web1.dns.lab.  
-dig @192.168.50.10 web2.dns.lab.   
-dig @192.168.50.10 www.newdns.lab. # информация должна быть недоступна  
+Был ряд действий по изменения, playbook и named.conf. В playbook добавлено правило включения параметра `named_write_master_zones` в `SELinux` для прав записи демона `named`. Также переписамы маршруты для зон из `/etc/named` в `/var/named/zones` и проставлены соотвертствующие изменения контекста каталога `/var/named/zones/`. В начале `playbook` для всех хостов настроена сихнронизация времи, через `ntpdate`. Включена защита от перезаписи на файл `/etc/resol.conf` и собственно для демонстрации SELinux, настройка зон производится с клиентов, через `nsupdate`. Файлы `named.conf` переписаны с использованием `view`.     
+Для проверки стенда нужно с каждого клиента проверить вводные. Это резолв для `client1` имен `web1.dns.lab` и `www.newdns.lab`  
 ```
+dig @192.168.50.10 web1.dns.lab
+dig @192.168.50.10 www.newdns.lab
+```
+И резолв dig `web1.dns.lab` и `web2.dns.lab` от `client2`  
+```
+dig @192.168.50.10 web1.dns.lab
+dig @192.168.50.10 web2.dns.lab
+```
+остальные имена за исключением `ns01` и `ns02` должны быть недоступны  
 
+
+#### Дополнительная информация:
 аудит файла /etc/resolvconf [auditctl] (https://1cloud.ru/help/security/audit-linux-c-pomoshju-auditd)  
 запись resolv.conf debian[rdnssd](https://linux.die.net/man/8/rdnssd)  
 синхронизация времени [ntpdate](https://serveradmin.ru/ustanovka-nastroyka-i-sinhronizatsiya-vremeni-v-centos/), [ntpdate_v2](https://serveradmin.ru/ntpdate-pool-ntp-org/)  
