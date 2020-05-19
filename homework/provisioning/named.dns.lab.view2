@@ -1,7 +1,7 @@
 $TTL 3600
-$ORIGIN newdns.lab.
+$ORIGIN dns.lab.
 @               IN      SOA     ns01.dns.lab. root.dns.lab. (
-                            2711201408 ; serial
+                            2711201407 ; serial
                             3600       ; refresh (1 hour)
                             600        ; retry (10 minutes)
                             86400      ; expire (1 day)
@@ -11,6 +11,6 @@ $ORIGIN newdns.lab.
                 IN      NS      ns01.dns.lab.
                 IN      NS      ns02.dns.lab.
 
-; SplitDNS
-www             IN      A       192.168.50.15
-                IN      A       192.168.50.16
+; DNS Servers
+ns01            IN      A       192.168.50.10
+ns02            IN      A       192.168.50.11
