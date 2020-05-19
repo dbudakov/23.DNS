@@ -40,4 +40,5 @@ dig @192.168.50.10 web2.dns.lab.
 dig @192.168.50.10 www.newdns.lab. # информация должна быть недоступна  
 ```
 
-аудит файла /etc/resolvconf [auditctl] (https://1cloud.ru/help/security/audit-linux-c-pomoshju-auditd)
+аудит файла /etc/resolvconf [auditctl] (https://1cloud.ru/help/security/audit-linux-c-pomoshju-auditd)  
+запись resolv.conf debian[rdnssd](https://linux.die.net/man/8/rdnssd)  
