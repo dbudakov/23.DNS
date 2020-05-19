@@ -43,3 +43,4 @@ dig @192.168.50.10 www.newdns.lab. # информация должна быть 
 аудит файла /etc/resolvconf [auditctl] (https://1cloud.ru/help/security/audit-linux-c-pomoshju-auditd)  
 запись resolv.conf debian[rdnssd](https://linux.die.net/man/8/rdnssd)  
 синхронизация времени [ntpdate](https://serveradmin.ru/ustanovka-nastroyka-i-sinhronizatsiya-vremeni-v-centos/), [ntpdate_v2](https://serveradmin.ru/ntpdate-pool-ntp-org/)  
+[SOA](http://www.bog.pp.ru/work/bind.html)  
