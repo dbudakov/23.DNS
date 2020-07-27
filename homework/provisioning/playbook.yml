@@ -4,10 +4,10 @@
   become: yes
   tasks:
     - name: install packages
-      yum: name=bind,bind-utils,ntp state=latest
+      yum: name=bind,bind-utils,ntp state=present
 
     - name: sntp
-      shell: ntpdate -u pool.ntp.org
+      shell: ntpdate -u ntp1.stratum2.ru
       ignore_errors: yes
 
     - name: copy transferkey to all servers and the client
