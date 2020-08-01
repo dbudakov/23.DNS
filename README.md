@@ -46,7 +46,7 @@ dig @192.168.50.10 web2.dns.lab
 для allow-transfer и allow-update обычно используют разные ключи (один для обмена данными между серверами, а другой для разрешения изменять зоны и клинетов, dhcp-севреров и пр.)
 А ответ  на вопрос,  здесь: https://kb.isc.org/docs/aa-00296
   
-rndc.conf](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/reference_guide/s2-bind-rndc-configuration-rndcconf) и [man rndc](https://linux.die.net/man/8/rndc)  
+[rndc.conf](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/reference_guide/s2-bind-rndc-configuration-rndcconf) и [man rndc](https://linux.die.net/man/8/rndc)  
 В работе используется автоприветствие текстом:  
 ```motd - сокращение от message of the day; содержимое этого файла вам показывается при входе в систему. Иногда это удобно. В данной работе он используется чтобы```
 
