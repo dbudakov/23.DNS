@@ -38,6 +38,7 @@ dig @192.168.50.10 web2.dns.lab
 
 
 #### Дополнительная информация:
+DNS сервер BIND (теория) [link](https://m.habr.com/ru/post/137587/)  
 аудит файла /etc/resolvconf [auditctl] (https://1cloud.ru/help/security/audit-linux-c-pomoshju-auditd)  
 запись resolv.conf debian[rdnssd](https://linux.die.net/man/8/rdnssd)  
 синхронизация времени [ntpdate](https://serveradmin.ru/ustanovka-nastroyka-i-sinhronizatsiya-vremeni-v-centos/), [ntpdate_v2](https://serveradmin.ru/ntpdate-pool-ntp-org/)  
@@ -56,3 +57,4 @@ dig @192.168.50.10 web2.dns.lab
 ```REFUSED получается когда запрос в ACL не попадает```   
 
 Ответы на вопросы лекции [здесь](https://github.com/dbudakov/23.DNS/blob/master/answers.md)  
+
